@@ -2,13 +2,13 @@
 
 **CS 4371, Fall 2026**
 
-**Team name / number:** Group Project 5 (CS4371-CAN-MIRGU)
+**Team name / number:** Group Project 5
 
 **Team members:** Daniel Delgado, Bigyan Dhakal, Mustafa Hassan, Bruce C Ngere, Adan Torres
 
-**Paper:**
+**Paper:** Security Attacks on LLM-based Code Completion Tools (Cheng, Sun, Zhang, Wang; AAAI 2025). Switched from CAN-MIRGU on Oct 5, 2026.
 
-**AI assistant(s) used (name and version, e.g., "ChatGPT (GPT-5), Claude (Sonnet 5)"):**
+**AI assistant(s) used (name and version, e.g., "ChatGPT (GPT-5), Claude (Sonnet 5)"):** Claude (Anthropic). Add each tool and version the team uses.
 
 ## How to use this log
 
@@ -33,7 +33,7 @@ One log per team, kept in the root of your GitHub repository and updated as you 
 
 | # | Date | Role | What the AI claimed or produced (short quote or summary) | Category | Verified? (yes / no / partially) | How you checked it (source, test, experiment) | Team member |
 |---|------|------|-----------------------------------------------------------|----------|----------------------------------|-----------------------------------------------|-------------|
-| 1 | | | | | | | |
+| 1 | 2026-10-05 | Archaeologist | Claude drafted the README: paper citation (authors, AAAI vol. 39 no. 22, pp. 23669–23677), summary, and setup notes from the authors' repo | OK | yes | Checked the citation against the AAAI page (doi.org/10.1609/aaai.v39i22.34537) and the setup notes against the authors' GitHub README | Bigyan Dhakal |
 | 2 | | | | | | | |
 | 3 | | | | | | | |
 | 4 | | | | | | | |
