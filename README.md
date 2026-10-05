@@ -2,7 +2,7 @@
 
 CS 4371 Computer System Security, Fall 2026, Texas State University. Instructor: Heena Rathore
 
-> **Topic change (Oct 5, 2026):** The team first picked CAN-MIRGU (CAN bus attack dataset). We switched to the paper below. The old repo name still says CAN-MIRGU.
+> **Topic change (Oct 5, 2026):** The team first picked CAN-MIRGU (CAN bus attack dataset). We switched to the paper below and renamed this repo from CS4371-CAN-MIRGU.
 
 ## Paper
 
@@ -62,8 +62,8 @@ More folders (code, data, docs) will be added once the team picks the idea for T
 ## How to clone and run
 
 ```bash
-git clone https://github.com/Bigyan1313/CS4371-CAN-MIRGU.git
-cd CS4371-CAN-MIRGU
+git clone https://github.com/Bigyan1313/CS4371-LLM-Code-Completion-Attacks.git
+cd CS4371-LLM-Code-Completion-Attacks
 ```
 
 *Build and run steps will be filled in once our Task 3 code exists.*
