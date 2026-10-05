@@ -56,6 +56,8 @@ Everyone speaks in the final presentation.
 |------|------------|
 | `README.md` | This file: paper, team, how to run, what works, background papers |
 | `AI_AUDIT.md` | Team log of every AI output we used and how we checked it (graded under Project Code) |
+| `course-files/` | Project files from Canvas (slides, rubric, proposal template, AI_AUDIT template, Quanta template) + text copies |
+| `CLAUDE.md` | Quick project notes: roles, due dates, grading, open items |
 
 More folders (code, data, docs) will be added once the team picks the idea for Task 3.
 

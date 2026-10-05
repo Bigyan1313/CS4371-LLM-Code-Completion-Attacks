@@ -1,0 +1,211 @@
+                CS4371:
+                COMPUTER
+                SYSTEM
+                SECURITY
+
+
+HEENA RATHORE              1
+AGENDA
+
+
+
+   Group project
+
+
+
+
+HEENA RATHORE       2
+What is research?
+• A “contribution to the body of knowledge”
+     • Who’s body of knowledge? – the current state of the art
+     • How? Through the advancement through the development of novel datasets,
+        algorithms, better results through improved performance and others…
+     • How does anyone know?
+            • Publication of manuscripts in peer-reviewed outlets
+                  • “Peers” – experts in your field
+                  • “Outlets” – conference proceedings (typically done first, allows for
+                      gathering of in-person feedback, manuscripts are shorter)
+                      followed by journals (typically done after conference publication
+                      in a conference proceeding)
+
+
+
+
+       Heena Rathore                                                                3
+      Basic process for performing research: Step 1
+      • All research begins with a research question, followed by a literature review
+      • Research Question: What advancement to the body of knowledge are you proposing?
+           • How can advancements in AI/photogrammetry improve the customization
+             process for smart prosthetics?
+           • Are all research questions good research questions?
+                • Ideally, should be focused on ensuring practical utility
+      • Literature Review: Fully understand the state-of-the-art for your research question
+            • Typically, a very long process, involves considerable reading and summarizing
+            • Good to have capacity to summarize/filter at varies levels
+                  • Initial Screen: Read abstract/conclusion, identify potential relevance
+                         • Can also screen based upon other factors (quality of outlet, date of
+                            publication, conference versus journal, etc.)
+            • May show that your research is not worth pursuing
+
+
+
+• Google scholar (specific keywords, shortlist with dates)
+• Google search
+                                                                          Heena Rathore           4
+• GitHUB (papers with code)
+Once a paper is identified, how should it be
+read?
+• Pursue a 2-stage approach
+• Step 1 – Quick skim (~ 30 mins) with following output (suggested form, should be written in an “ongoing” journal -> Google Doc)
+     • Who did the work (for > 3 authors, “X et al. ….)
+     • What did they do (in general) (“used support vector machines to classify gender from eye movements.) -> End Sentence 1
+     • How did they do it/what result did they get (specifically)? (A dataset consisting of 500 subjects recorded on Y hardware was
+        used for model validation (can be more than 1 sentence).)
+     • What result did they get? “An accuracy of 78% percent was achieved for the utilized dataset”
+     • Why is your work better/why does your work add value? -> Can in general leave this off until you start writing a paper
+           • “Better” model -> WHY?
+           • “Better” dataset -> WHY?
+           • Different problem formulation
+• Step 2 – Perform a more detailed read on high quality papers that are particularly relevant to your work (i.e.: techniques or
+  algorithms to benchmark, etc.)
+
+
+
+
+                                                             Heena Rathore                                                            5
+              • After reviewing your research question in the academic
+                literature, your understanding of the topic should
+                become more mature. Coupled with your previously
+
+Basic           knowledge, this should allow you to formulate a
+                research hypothesis.
+                   • Think of a research hypothesis as an
+process for          advanced/testable form of your research question
+                        • Example Initial Research Question: How can
+
+performing                advancements in AI/photogrammetry improve
+                          the customization process for smart
+                          prosthetics?
+research:               • Example Research Hypothesis After Lit Review:
+                          AI algorithms for improving photogrammetry
+
+Step 2                    capture like NVIDIA NeRF are capable of
+                          noticeably improving the fit of smart prosthetic
+                          hands as measured by user experience surveys
+                             • Key Attributes: 1) Quantitative, 2) Able to
+                               develop an evaluation plan
+
+
+                  Heena Rathore                                          6
+GROUP PROJECT
+ Each team will consist of 4-5 students. Each project will be a given research paper on the real-world applications
+ discussed in the class. The groups will be evaluated on the basis of:
+ 1. Understand your ability to read, understand, and summarize published literature.
+ 2. Understand your ability to use software tools and reproduce published.
+ Tentative rubric for the project is 20% research proposal, 30% group presentation, 30% code and 20% peer review
+Paper (Spring 2023):
+https://ieeexplore.ieee.org/abstract/document/10325722
+
+Group Presentation (Fall 2023):
+https://www.youtube.com/watch?v=GOmV_EBqDLo
+
+
+Group Presentation (Spring 2024):
+• https://www.youtube.com/watch?v=smXmbPXwi3I
+• https://www.youtube.com/watch?v=jkQQ_440Ht8
+HEENA RATHORE                                                                                                         7
+PROJECT FORMAT
+The lectures will typically cover the core technical concepts. This will be followed by paper discussions involving role-playing inspired by Alec Jacobson
+and Colin Raffel. We will be adopting a subset of the following roles:
+•   Reviewer: The paper has been submitted to your conference/journal, and you have been assigned to review it.
+•   Archaeologist: You’re an archeologist who must determine where this paper sits in the context of previous work. You must find and report on at
+    least one older paper cited within the current paper that substantially influenced the current paper and at least one newer paper that cites this
+    current paper. Look out for follow-up work that offers criticism of the current paper.
+•   Quanta Correspondent: You want to write an article on the paper for Quanta. You must explain to a broad audience the main problem the paper is
+    addressing, why it is important, and what the main technical contributions are.
+•   Student Researcher: You are looking for a new research problem and the paper piqued your interest. You have to come up with follow-up project
+    ideas based on the paper. These can be direct improvements of the paper, or projects that use the papers results as building blocks.
+•   Reproducibility Checker: You want to check whether the claims of the paper are valid. You decide to create a small experiment (toy dataset, or toy
+    model) and verify if the results hold. Make sure to check how robust they are to various choice of hyperparameters. (Will count in project demo)
+   Fall 2026: every role also has an AI-augmented task and an audit duty (see next slide)
+
+
+
+HEENA RATHORE                                                                                                                                            8
+AI-AUGMENTED ROLES (FALL 2026)
+
+
+   Rule: AI use is required, and every AI output your team relies on must be verified and logged in AI_AUDIT.md
+
+   Reviewer: write your own review first (7 pts), then complete the AI Review Disagreement Table against the instructor’s AI-generated review (3 pts)
+
+   Archaeologist: may use AI to find the older/newer papers, but must verify both exist and the citation link is real
+
+   Student Researcher: get three follow-up ideas from AI; label each feasible / already published / technically flawed
+
+   Reproducibility Checker: AI coding assistants allowed; log every hallucination (nonexistent API, code that runs but is wrong)
+
+   Quanta Correspondent: your article vs. an AI-written article; blind class vote at the midway session (Nov 3)
+
+
+
+
+HEENA RATHORE                                                                                                                                            9
+AI_AUDIT.MD: ONE LOG PER TEAM
+
+
+   Lives in your GitHub repo (template provided); graded under Project Code
+
+   For each AI output you relied on, log: the claim | category | verified? | how you checked
+
+   Categories: fabricated citation, nonexistent API or function, misstated result, code that runs but is wrong, overclaim
+
+   Lessons learned (Task 6): present your two most consequential AI failures and how the team caught them
+
+   Peer review adds a fifth question: did the team member verify AI outputs rather than paste them?
+
+   Unverified AI content presented as your own work is graded as incorrect
+
+
+
+
+HEENA RATHORE                                                                                                                10
+    GROUP PROJECT (20%)
+
+
+•      Step 1: Project Proposal (Reviewer)
+
+       •   You will need to play reviewer for one paper for 10% of the grade
+
+       •   The other roles namely student researcher and reproducibility checker require for 5-5 % of the grade
+
+
+
+
+    HEENA RATHORE                                                                                                 11
+    GROUP PROJECT
+   Here is the tentative roles for the group project:
+     •   <Reviewer, Student Researcher, Reproducibility Checker> (20 Points)
+
+         •   Project proposal : A short document with at most 2 pages of content. Please be mindful of not being overly ambitious, and scoping the projects appropriately. [Project
+             proposal template will be shared]
+
+     •   <Quanta Correspondent> (10 points)
+
+         •   Midway progress: Stand up presentation for 5 minutes
+
+
+
+   Final project presentations will be held in week 14 and 15.
+               •    Demo (30 points)
+
+               •    Final project code (25 points) <Archeologist, Student Researcher, Reproducibility Checker >
+
+               •    Team Participation (20 points)
+
+   Fall 2026: AI_AUDIT.md required in each repo (graded under Project Code); peer form adds a fifth question on verifying AI
+    outputs (scaled to 20)
+
+
+    HEENA RATHORE                                                                                                                                                               12
+

@@ -1,0 +1,139 @@
+                              CS4371 Final Project (Fall 2026)
+AI Use Policy (Fall 2026)
+
+AI use in this project is required, not banned. Each role uses an approved AI assistant (e.g., ChatGPT,
+Claude, or Copilot) as part of its tasks, and every AI output your team relies on must be verified by a
+human and logged in the AI_AUDIT file in your GitHub repository (template provided). Unverified AI
+content presented as your own work will be graded as incorrect.
+
+For each AI output, AI_AUDIT records: the claim, its category (fabricated citation, nonexistent API or
+function, misstated result, code that runs but is wrong, or overclaim), whether it survived verification,
+and how you checked it. The completeness and honesty of this log is graded under Project Code.
+
+
+
+                                         Proposed List of Papers
+
+Below is the list of papers each group can choose from. There could be an overlap between the groups.
+
+    •   Paper: Security Attacks on LLM-based Code Completion Tools
+        Code: https://github.com/sensente/security-attacks-on-lccts
+
+    •   Paper: How Effective Are Neural Networks for Fixing Security Vulnerabilities
+        Code: https://github.com/lin-tan/llm-vul
+
+    •   Paper: SecureCode v2.0: A Production-Grade Dataset for Training Security-Aware Code
+        Generation Models
+        Code: https://github.com/scthornton/securecode-web
+
+    •   Paper: IoT-AD: A Framework to Detect Anomalies Among Interconnected IoT Devices
+        Code: https://github.com/Hasniuj-Zahan/IoT-anomaly-detector
+
+    •   Paper: A Framework for Malicious Traffic Detection in IoT Healthcare Environment
+        Code: https://github.com/ThingzDefense/Malicious-Traffic-Detection-in-IoT-Healthcare-
+        Environment
+
+    •   Paper: Securing Healthcare with Deep Learning: A CNN-Based Model for medical IoT Threat
+        Detection
+        Code: https://github.com/alirezamohamadiam/Securing-Healthcare-with-Deep-Learning-A-
+        CNN-Based-Model-for-medical-IoT-Threat-Detection
+
+    •   Paper: Adaptive NAD: Online and Self-adaptive Unsupervised Network Anomaly Detector
+        Code: https://github.com/MyLearnCodeSpace/Adaptive-NAD
+
+    •   Paper: ASCON Lightweight Cryptography Implementation via LLMs
+        Code: https://github.com/DrCintas/ASCON-with-ChatGPT
+    •   Paper: AICrypto: A Comprehensive Benchmark For Evaluating Cryptography Capabilities of Large
+        Language Models
+        Code: https://github.com/wangyu-ovo/aicrypto-agent
+
+    •   Paper: CAN-MIRGU: A Comprehensive CAN Bus Attack Dataset from Moving Vehicles for
+        Intrusion Detection System Evaluation
+        Code: https://github.com/sampathrajapaksha/CAN-MIRGU
+
+    •   11*. If you or your group member do not like any of the above papers, I am open for papers
+        which you think would be apt for the group project and related to topics covered in the class.
+
+                                          Project Proposal (20 points)                        (Due Oct 13)
+
+Task 1: (10 pts) Reviewer role. First, write your own high-level overview (like a summary) of the key
+contributions of the paper that your team has picked (7 pts). Then open the instructor-provided AI-
+generated review of your paper and complete the AI Review Disagreement Table in the proposal template:
+identify at least three specific points where the AI review is right, shallow, wrong, or fabricated, with
+evidence from the paper (3 pts). Write your own review before reading the AI review. One page report
+in pdf format, plus the disagreement table
+
+Task 2: (5 pts) Describe which specific topic from the paper you are investigating in further detail over the
+next two months and why you picked that topic? Describe how it ties to the topics that we have covered
+in the class? Which application areas can the idea that you have chosen to be applied to? Appendix
+(required): ask an approved AI assistant for three follow-up project ideas based on your paper. In the AI
+Idea Appendix of the proposal template, label each idea as feasible, already published, or technically
+flawed, with a one-sentence justification, and state whether your chosen topic came from your team or
+from the AI.
+
+Task 3: (5 pts) As part of the final presentation, you will be required to demonstrate software for a new
+idea that you may have based on what you learned from the paper? For the project proposal phase,
+describe which idea you will be picking and how you plan on approaching this task. Name the AI coding
+assistant your team will use and describe how you will verify its output. Create your team’s AI_AUDIT.md
+now; every AI output your team relies on must be logged and verified there.
+
+                                         Quanta Correspondent (10 points)                       (Nov 3)
+
+Note: At the midway session the instructor will show an AI-generated popular-science article for each
+paper alongside yours. The class votes (blind) on which article is human-written and which is more
+faithful to the paper. Your article is graded as before; the AI article does not affect your grade.
+
+                                         Project Demo (25 points)
+
+Task 4: (10 pts) A fully functional code, as outlined in Task 3 above, is demonstrated with results.
+
+Task 5: (10 pts) Detailed description of the specific topic suggested in Task 2 above. Description should
+include what you learned from that topic, how it applies to what we have learned in the class, and
+application areas.
+Task 6: (5 pts) Seldom in a project everything goes as planned. Team should describe what did not go well
+and lessons learned from the process. Include the two most consequential AI failures from your
+AI_AUDIT.md and how the team caught them
+
+                                        In-Class Presentation Dates*
+
+                                             Project Code (25 points)                         (Due Nov 24)
+
+(10 pts) Full commented code and the code is clean, formatted.
+
+(10 pts) The README file in the GitHub repository indicates clearly how to easily clone and build/deploy
+the code. The README file in the GitHub repository clearly indicates what functionality does (and does
+not, if applicable) work in the final version of the application. Additionally, it should include references to
+two scholarly papers: one representing prior research, serving as the foundational bedrock for the current
+study, and another representing contemporary work that acknowledges and builds upon the findings of
+the current paper. This practice is akin to the methodology of an archeologist, meticulously documenting
+the lineage of ideas and advancements within the academic landscape. You may use an AI assistant to
+locate these two papers, but you must verify that both papers actually exist and that the claimed citation
+relationship is real; log any fabricated or misattributed reference in AI_AUDIT.md.
+
+(5pts) Any data required to test/demo the application has been provided within the project. Instructors
+can run the code and reproduce the results shown in the class. The repository must also include a
+complete AI_AUDIT.md covering all roles.
+
+                                       Team Participation (20 points)
+
+Instructor will provide a feedback form to each student. In this feedback form, each student will grade
+participation of other team members. Form will have the following format:
+
+                Did     team     Did     team     Did      team    Did     team     Did      team Total
+                member           member           member help      member           member
+                contribute to    implement        in               contribute to    verify      AI
+                overall          the features     testing/debu     the              outputs used
+                project          that    were     gging overall    presentation     for their role
+                planning         assigned to      code (Max        (Max 5 pts)      rather than
+                (Max 5 pts)      them(Max 5       2.5 pts)                          pasting them
+                                 pts)                                               (Max 2.5 pts)
+ Member1
+ 2
+ 3
+ 4
+ 5
+
+
+Instructor will add the average of the total points for the student, scaled to 20, to the overall score for the
+student.
+
