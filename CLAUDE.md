@@ -70,4 +70,5 @@ Mismatches between files: the rubric PDF says the proposal is due Oct 13 and Qua
 - The instructor's AI-generated review of our paper (needed for Reviewer Task 1) was not found on Canvas yet.
 - Archaeologist papers (older + newer) are not picked yet.
 - GitHub invites for Mustafa, Adan, Daniel and Bruce are pending.
-- The team proposal doc is a Google Doc Adan shared: "CS 4371 Project Proposal_Fall2026".
+- The team proposal doc is a Google Doc Adan shared: "CS 4371 Project Proposal_Fall2026", https://docs.google.com/document/d/1gVUbWT66bIGNAsDLQDGIxsPKjim9I3yc-lZACu95fhk/edit
+- Proposal status at 5:40 PM, Oct 5: Task 2 (Adan) is filled in. Paper title, group members, Task 1 (Mustafa) and Task 3 (Daniel) are still empty.
