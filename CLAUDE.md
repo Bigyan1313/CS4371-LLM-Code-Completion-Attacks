@@ -1,6 +1,6 @@
 # Project notes: CS 4371 Group Project 5
 
-Quick reference for this repo. The full course files are in `course-files/`, with plain-text copies in `course-files/text/` that are easy to search and read.
+Quick reference for this repo. The course files (slides, rubric, templates) are on Canvas only and are not kept in this repo.
 
 ## Course
 
