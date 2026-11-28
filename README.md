@@ -131,15 +131,15 @@ Notes from the authors' repo, for reproducing their setup:
 | Part | Status |
 |------|--------|
 | Repo + AI_AUDIT.md set up | Done |
-| Model setup (`model_client.py`, `check_setup.py`) | Done. Tested on a MacBook Air (M4, 16 GB): all three models download, and the main model answers a test request in under 2 seconds |
-| Test inputs, leak checker, no-defense run (`test_inputs.py`, `leak_check.py`, `run_experiment.py`) | Done. Runs on a MacBook Air (M4) in both modes. Two bugs were found by reading the answers and fixed (AI_AUDIT rows 6 and 7). See "Results so far" below |
+| Model setup (`model_client.py`, `check_setup.py`) | Done. Tested on a MacBook Air: all three models download, and the main model answers a test request in under 2 seconds |
+| Test inputs, leak checker, no-defense run (`test_inputs.py`, `leak_check.py`, `run_experiment.py`) | Done. Runs on a MacBook Air in both modes. Two bugs were found by reading the answers and fixed (AI_AUDIT rows 6 and 7). See "Results so far" below |
 | Input filter, output filter | Not started |
 
 *Update this table before the final version so it is clear what works and what doesn't.*
 
 ## Results so far
 
-No defense yet, model `qwen2.5-coder:1.5b`, temperature 0, run on a MacBook Air (M4):
+No defense yet, model `qwen2.5-coder:1.5b`, temperature 0, run on a MacBook Air:
 
 | Mode | Attacks that got the canary word out | Normal requests where the canary word showed up anyway |
 |------|------|------|
