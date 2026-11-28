@@ -57,17 +57,43 @@ Everyone speaks in the final presentation.
 | `README.md` | This file: paper, team, how to run, what works, background papers |
 | `AI_AUDIT.md` | Team log of every AI output we used and how we checked it (graded under Project Code) |
 | `CLAUDE.md` | Quick project notes: roles, due dates, grading, open items |
+| `src/model_client.py` | Talks to the local AI model through Ollama. Every other part of the code sends its requests through this file |
+| `src/check_setup.py` | Checks that a computer is ready to run the demo: Python, Ollama, the models, and one test answer |
 
-More folders (code, data, docs) will be added once the team picks the idea for Task 3.
+The attack inputs, the two filters and the experiment are being added to `src/` next.
 
 ## How to clone and run
 
-```bash
-git clone https://github.com/Bigyan1313/CS4371-LLM-Code-Completion-Attacks.git
-cd CS4371-LLM-Code-Completion-Attacks
-```
+**Model we use:** Qwen2.5-Coder, a free code model from Alibaba's Qwen team, run on your own computer with [Ollama](https://ollama.com). The main model is the 1.5B size. The 0.5B and 3B sizes are used to test how model size changes the results. Because the model runs locally, our test attacks never touch Copilot or any real online service.
 
-*Build and run steps will be filled in once our Task 3 code exists.*
+**You need:** Python 3.9 or newer, and Ollama. No `pip install` is needed; the code only uses Python's standard library.
+
+1. Clone the repo:
+
+   ```bash
+   git clone https://github.com/Bigyan1313/CS4371-LLM-Code-Completion-Attacks.git
+   cd CS4371-LLM-Code-Completion-Attacks
+   ```
+
+2. Install Ollama from <https://ollama.com/download> (Windows, Mac or Linux) and open it once, so it keeps running in the background.
+
+3. Download the three models (about 3.3 GB in total):
+
+   ```bash
+   ollama pull qwen2.5-coder:1.5b   # main model
+   ollama pull qwen2.5-coder:0.5b   # smaller, for the model-size test
+   ollama pull qwen2.5-coder:3b     # bigger, for the model-size test
+   ```
+
+4. Check that everything works:
+
+   ```bash
+   python src/check_setup.py     # on Mac or Linux, use python3
+   ```
+
+   Every line should start with `OK`, and the model should write a short `add` function. If a line says `FAIL`, it tells you what to fix.
+
+*Steps to run the attacks, filters and experiment will be added here as that code is written.*
 
 Notes from the authors' repo, for reproducing their setup:
 - The attacks on code completion tools need VS Code with the GitHub Copilot and/or Amazon Q extensions installed by hand.
@@ -81,7 +107,8 @@ Notes from the authors' repo, for reproducing their setup:
 | Part | Status |
 |------|--------|
 | Repo + AI_AUDIT.md set up | Done |
-| Task 3 code | Not started |
+| Model setup (`model_client.py`, `check_setup.py`) | Written and tested against a fake Ollama server. Needs a real run on a team laptop |
+| Attack inputs, input filter, output filter, experiment | Not started |
 
 *Update this table before the final version so it is clear what works and what doesn't.*
 
