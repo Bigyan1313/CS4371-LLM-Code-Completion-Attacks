@@ -75,7 +75,7 @@ The attack inputs, the two filters and the experiment are being added to `src/` 
    cd CS4371-LLM-Code-Completion-Attacks
    ```
 
-2. Install Ollama from <https://ollama.com/download> (Windows, Mac or Linux) and open it once, so it keeps running in the background.
+2. Install Ollama from <https://ollama.com/download> (Windows, Mac or Linux) and open it once, so it keeps running in the background. You don't need an Ollama account. On the first screen, pick "No thanks, I'll use Ollama locally".
 
 3. Download the three models (about 3.3 GB in total):
 
@@ -84,6 +84,8 @@ The attack inputs, the two filters and the experiment are being added to `src/` 
    ollama pull qwen2.5-coder:0.5b   # smaller, for the model-size test
    ollama pull qwen2.5-coder:3b     # bigger, for the model-size test
    ```
+
+   On a Mac, if Terminal says `command not found: ollama`, use the full path instead: `/Applications/Ollama.app/Contents/Resources/ollama pull ...`. If it says `could not connect to ollama server`, the Ollama app isn't running. Start it with `open -a Ollama` and try again.
 
 4. Check that everything works:
 
@@ -107,7 +109,7 @@ Notes from the authors' repo, for reproducing their setup:
 | Part | Status |
 |------|--------|
 | Repo + AI_AUDIT.md set up | Done |
-| Model setup (`model_client.py`, `check_setup.py`) | Written and tested against a fake Ollama server. Needs a real run on a team laptop |
+| Model setup (`model_client.py`, `check_setup.py`) | Done. Tested on a MacBook Air (M4, 16 GB): all three models download, and the main model answers a test request in under 2 seconds |
 | Attack inputs, input filter, output filter, experiment | Not started |
 
 *Update this table before the final version so it is clear what works and what doesn't.*
