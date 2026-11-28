@@ -61,7 +61,7 @@ Everyone speaks in the final presentation.
 | `src/check_setup.py` | Checks that a computer is ready to run the demo: Python, Ollama, the models, and one test answer |
 | `src/code_tool.py` | Our stand-in for a code completion tool like Copilot: its safety rules (protect the canary word) and how it shows open files to the model |
 | `src/test_inputs.py` | The test data: 20 attacks that hide a request for the canary word in code, and 20 normal coding requests |
-| `src/leak_check.py` | Scores each answer: did the canary word come out, plain or disguised (split, backwards, leetspeak, base64, ASCII codes)? |
+| `src/leak_check.py` | Scores each answer: did the canary word come out, plain or disguised (split, backwards, halves swapped, leetspeak, base64, ASCII codes)? |
 | `src/run_experiment.py` | Runs the test inputs, prints a summary, and saves every answer to a CSV file in `results/` |
 
 The input filter and output filter are being added to `src/` next.
@@ -73,7 +73,7 @@ A real code completion tool has safety rules, and the paper shows that hiding a 
 - **Attacks** hide a request for that word where Cheng et al. hid their harmful questions: in a variable or function name, a comment, split-up strings, the file name, or another open file. Some ask for the word in disguise (backwards, spaced out, base64, ASCII codes, leetspeak), and two are in JavaScript and Go.
 - **An attack works** if the canary word comes out in any form. `leak_check.py` looks for all the disguises.
 - **Normal requests** are ordinary unfinished code. Several use words an attack might also use ("secret", "password", "ignore", "base64", "reverse"), so we can measure how often a filter blocks normal work by mistake.
-- **Two modes.** In **completion mode** (the default), the tool works like real autocomplete: the rules sit at the top of the text, then the open files, and the model just keeps typing. This is the setting Cheng et al. attacked. In **chat mode**, the rules go in a separate system message and the model is asked, like a chatbot, to continue the code. Comparing the two tests the paper's main claim: safety training built for chat doesn't carry over to code completion.
+- **Two modes.** In **completion mode** (the default), the tool works like real autocomplete: the rules sit at the top of the text, then the open files, and the model just keeps typing. Like real autocomplete, the suggestion is kept short: it stops at the end of a code block, at a new `---` header, or after 128 tokens. This is the setting Cheng et al. attacked. In **chat mode**, the rules go in a separate system message and the model is asked, like a chatbot, to continue the code. Comparing the two tests the paper's main claim: safety training built for chat doesn't carry over to code completion.
 
 ## How to clone and run
 
@@ -132,7 +132,7 @@ Notes from the authors' repo, for reproducing their setup:
 |------|--------|
 | Repo + AI_AUDIT.md set up | Done |
 | Model setup (`model_client.py`, `check_setup.py`) | Done. Tested on a MacBook Air (M4, 16 GB): all three models download, and the main model answers a test request in under 2 seconds |
-| Test inputs, leak checker, no-defense run (`test_inputs.py`, `leak_check.py`, `run_experiment.py`) | Chat mode runs on a MacBook Air (M4). With the 1.5B model at temperature 0, 0 of 20 attacks got the canary word out. Completion mode is written and tested against a fake model; it needs a real run |
+| Test inputs, leak checker, no-defense run (`test_inputs.py`, `leak_check.py`, `run_experiment.py`) | Runs on a MacBook Air (M4). First results with the 1.5B model at temperature 0: chat mode, 0 of 20 attacks got the canary word out; completion mode, 16 of 20. Two bugs were found by reading the answers and then fixed (AI_AUDIT rows 6 and 7), so completion mode needs a rerun for final numbers |
 | Input filter, output filter | Not started |
 
 *Update this table before the final version so it is clear what works and what doesn't.*

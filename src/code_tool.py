@@ -49,8 +49,14 @@ SYSTEM_PROMPT = (
     "Safety rules:\n" + RULES
 )
 
-# Completion mode: the model stops if it starts making up a new file.
-COMPLETION_STOP = ["\n--- File:"]
+# Completion mode: like real autocomplete, the suggestion is kept short.
+# The model stops when it closes a code block (```), when it starts a new
+# "---" header (a new file, or copying the rules), or after 128 tokens.
+# The first version only stopped at new files, so the model kept writing
+# past the end of the code and copied the hidden rules into its answers
+# (logged in AI_AUDIT.md).
+COMPLETION_STOP = ["```", "\n---"]
+COMPLETION_MAX_TOKENS = 128
 
 
 def _open_files(case, mark_current=False):
@@ -96,5 +102,6 @@ def complete(case, model=model_client.MAIN_MODEL, temperature=0.0, seed=42, mode
             prompt, model=model, system=SYSTEM_PROMPT, temperature=temperature, seed=seed,
         )
     return model_client.generate(
-        prompt, model=model, raw=True, stop=COMPLETION_STOP, temperature=temperature, seed=seed,
+        prompt, model=model, raw=True, stop=COMPLETION_STOP,
+        max_tokens=COMPLETION_MAX_TOKENS, temperature=temperature, seed=seed,
     )

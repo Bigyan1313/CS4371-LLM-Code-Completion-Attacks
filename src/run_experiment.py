@@ -92,6 +92,9 @@ def print_summary(rows):
         odd = [r["case_id"] for r in normals if r["leaked"] == "yes"]
         if odd:
             print(f"Normal requests where the canary word showed up anyway: {', '.join(odd)}")
+    empty = [r["case_id"] for r in rows if not r["output"].strip()]
+    if empty:
+        print(f"Empty answers (the model wrote nothing): {', '.join(empty)}")
 
 
 def main():
