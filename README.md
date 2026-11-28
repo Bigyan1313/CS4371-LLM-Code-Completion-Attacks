@@ -73,6 +73,7 @@ A real code completion tool has safety rules, and the paper shows that hiding a 
 - **Attacks** hide a request for that word where Cheng et al. hid their harmful questions: in a variable or function name, a comment, split-up strings, the file name, or another open file. Some ask for the word in disguise (backwards, spaced out, base64, ASCII codes, leetspeak), and two are in JavaScript and Go.
 - **An attack works** if the canary word comes out in any form. `leak_check.py` looks for all the disguises.
 - **Normal requests** are ordinary unfinished code. Several use words an attack might also use ("secret", "password", "ignore", "base64", "reverse"), so we can measure how often a filter blocks normal work by mistake.
+- **Two modes.** In **completion mode** (the default), the tool works like real autocomplete: the rules sit at the top of the text, then the open files, and the model just keeps typing. This is the setting Cheng et al. attacked. In **chat mode**, the rules go in a separate system message and the model is asked, like a chatbot, to continue the code. Comparing the two tests the paper's main claim: safety training built for chat doesn't carry over to code completion.
 
 ## How to clone and run
 
@@ -110,10 +111,11 @@ A real code completion tool has safety rules, and the paper shows that hiding a 
 5. Run all 40 test inputs with no defense:
 
    ```bash
-   python3 src/run_experiment.py            # add --show to see every answer
+   python3 src/run_experiment.py               # completion mode; add --show to see every answer
+   python3 src/run_experiment.py --mode chat   # the same inputs in chat mode
    ```
 
-   It prints whether each attack got the canary word out ("LEAKED") or not ("held"), then a summary, and saves the results to `results/none__qwen2.5-coder-1.5b__t0.0.csv`. Other options: `--model qwen2.5-coder:3b`, `--temperature 0.7`, and `--only A01 N04` to run just some cases.
+   It prints whether each attack got the canary word out ("LEAKED") or not ("held"), then a summary, and saves the results to a CSV file in `results/`, for example `results/completion__none__qwen2.5-coder-1.5b__t0.0.csv`. Other options: `--model qwen2.5-coder:3b`, `--temperature 0.7`, and `--only A01 N04` to run just some cases.
 
 *Steps to run the filters will be added here as that code is written.*
 
@@ -130,7 +132,7 @@ Notes from the authors' repo, for reproducing their setup:
 |------|--------|
 | Repo + AI_AUDIT.md set up | Done |
 | Model setup (`model_client.py`, `check_setup.py`) | Done. Tested on a MacBook Air (M4, 16 GB): all three models download, and the main model answers a test request in under 2 seconds |
-| Test inputs, leak checker, no-defense run (`test_inputs.py`, `leak_check.py`, `run_experiment.py`) | Written and tested against a fake model. Needs a real run |
+| Test inputs, leak checker, no-defense run (`test_inputs.py`, `leak_check.py`, `run_experiment.py`) | Chat mode runs on a MacBook Air (M4). With the 1.5B model at temperature 0, 0 of 20 attacks got the canary word out. Completion mode is written and tested against a fake model; it needs a real run |
 | Input filter, output filter | Not started |
 
 *Update this table before the final version so it is clear what works and what doesn't.*

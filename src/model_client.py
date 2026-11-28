@@ -57,27 +57,34 @@ def list_models():
     return [model["name"] for model in reply.get("models", [])]
 
 
-def generate(prompt, model=MAIN_MODEL, system=None, temperature=0.0, seed=42, max_tokens=256):
+def generate(prompt, model=MAIN_MODEL, system=None, temperature=0.0, seed=42,
+             max_tokens=256, raw=False, stop=None):
     """Send `prompt` to the model and return its answer.
 
+    system:      rules sent as a separate "system" message (chat style).
     temperature: 0 means the model always picks its most likely next word,
                  so runs are repeatable. Higher values make it more random.
                  The experiment changes this to see if it affects attacks.
     seed:        fixed so the same settings give the same answer every run.
     max_tokens:  upper limit on how long the answer can be.
+    raw:         True sends the prompt as plain text with no chat formatting,
+                 so the model just keeps typing where the text stops, like
+                 autocomplete. (Ollama ignores `system` in this mode.)
+    stop:        list of strings; the model stops writing when it hits one.
 
     Returns a dict: {"text": the model's answer, "seconds": how long it took}.
     """
+    options = {"temperature": temperature, "seed": seed, "num_predict": max_tokens}
+    if stop:
+        options["stop"] = stop
     payload = {
         "model": model,
         "prompt": prompt,
         "stream": False,  # wait for the whole answer instead of word by word
-        "options": {
-            "temperature": temperature,
-            "seed": seed,
-            "num_predict": max_tokens,
-        },
+        "options": options,
     }
+    if raw:
+        payload["raw"] = True
     if system is not None:
         payload["system"] = system
 

@@ -5,7 +5,8 @@ their own. The input and output filters will be added as more defense
 options later.
 
 Examples (run from the repo folder):
-    python3 src/run_experiment.py                  # main model, temperature 0
+    python3 src/run_experiment.py                  # completion mode, main model, temperature 0
+    python3 src/run_experiment.py --mode chat      # chat mode instead (see code_tool.py)
     python3 src/run_experiment.py --show           # also print every answer
     python3 src/run_experiment.py --model qwen2.5-coder:3b --temperature 0.7
     python3 src/run_experiment.py --only A01 N04   # run just some cases
@@ -28,16 +29,17 @@ RESULTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "re
 DEFENSES = ["none"]  # "input", "output" and "both" get added with the filters
 
 CSV_COLUMNS = [
-    "model", "temperature", "defense", "case_id", "kind", "language", "spot",
+    "mode", "model", "temperature", "defense", "case_id", "kind", "language", "spot",
     "encoding", "file_name", "blocked", "leaked", "leak_method", "seconds", "output",
 ]
 
 
-def run_case(case, model, temperature, defense):
+def run_case(case, mode, model, temperature, defense):
     """Run one case and return a result row for the CSV."""
-    result = code_tool.complete(case, model=model, temperature=temperature)
+    result = code_tool.complete(case, model=model, temperature=temperature, mode=mode)
     leak = find_leak(result["text"])
     return {
+        "mode": mode,
         "model": model,
         "temperature": temperature,
         "defense": defense,
@@ -55,15 +57,15 @@ def run_case(case, model, temperature, defense):
     }
 
 
-def save_csv(rows, model, temperature, defense, partial=False):
-    """Save the rows to results/<defense>__<model>__t<temperature>.csv and return the path.
+def save_csv(rows, mode, model, temperature, defense, partial=False):
+    """Save the rows to results/<mode>__<defense>__<model>__t<temperature>.csv and return the path.
 
     Partial runs (--only) get "__partial" added, so they never overwrite a full run.
     """
     os.makedirs(RESULTS_DIR, exist_ok=True)
     safe_model = model.replace(":", "-").replace("/", "-")
     suffix = "__partial" if partial else ""
-    path = os.path.join(RESULTS_DIR, f"{defense}__{safe_model}__t{temperature}{suffix}.csv")
+    path = os.path.join(RESULTS_DIR, f"{mode}__{defense}__{safe_model}__t{temperature}{suffix}.csv")
     with open(path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=CSV_COLUMNS)
         writer.writeheader()
@@ -94,6 +96,8 @@ def print_summary(rows):
 
 def main():
     parser = argparse.ArgumentParser(description="Run the test inputs and score the results.")
+    parser.add_argument("--mode", choices=code_tool.MODES, default="completion",
+                        help="completion = like autocomplete (default); chat = like ChatGPT")
     parser.add_argument("--model", default=model_client.MAIN_MODEL)
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--defense", choices=DEFENSES, default="none")
@@ -109,11 +113,11 @@ def main():
             print("No cases match those IDs.")
             return 1
 
-    print(f"Model {args.model}, temperature {args.temperature}, defense: {args.defense}\n")
+    print(f"Mode: {args.mode}, model {args.model}, temperature {args.temperature}, defense: {args.defense}\n")
     rows = []
     for number, case in enumerate(cases, start=1):
         try:
-            row = run_case(case, args.model, args.temperature, args.defense)
+            row = run_case(case, args.mode, args.model, args.temperature, args.defense)
         except model_client.OllamaError as err:
             print(f"FAIL  {err}")
             return 1
@@ -128,7 +132,7 @@ def main():
             print("      " + row["output"].strip().replace("\n", "\n      ") + "\n")
 
     print_summary(rows)
-    path = save_csv(rows, args.model, args.temperature, args.defense, partial=bool(args.only))
+    path = save_csv(rows, args.mode, args.model, args.temperature, args.defense, partial=bool(args.only))
     print(f"\nSaved {len(rows)} results to {path}")
     return 0
 
