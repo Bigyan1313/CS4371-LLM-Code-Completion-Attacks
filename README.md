@@ -47,7 +47,7 @@ Everyone speaks in the final presentation.
 | Project Proposal (one upload for the whole group) | Mon Oct 5, 2026, 11:59 PM |
 | Quanta Correspondent | Wed Oct 7, 2026, 11:59 PM |
 | Midway stand-up + blind AI-article vote | Nov 3, 2026 |
-| Project Code (this repo, README, AI_AUDIT.md) | Nov 24, 2026 |
+| Project Code (this repo, README, AI_AUDIT.md) | Sun Nov 29, 2026, 11:59 PM |
 | Demo + final presentations | Weeks 14–15 |
 
 ## What is in this repo

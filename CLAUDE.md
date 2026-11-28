@@ -33,7 +33,7 @@ Bruce said he'll lead the final presentation. Per the instructor, everyone has t
 | Project Proposal (one upload for the whole group) | Mon Oct 5, 2026, 11:59 PM | 20 |
 | Quanta Correspondent (stand-up slides, max 2 slides) | Wed Oct 7, 2026, 11:59 PM | 5 on Canvas |
 | Midway stand-up + blind AI-article vote | Nov 3, 2026 | |
-| Project Code | Nov 24, 2026 | 25 |
+| Project Code | Sun Nov 29, 2026, 11:59 PM | 25 |
 | Demo + final presentations | Weeks 14–15 | 25 (rubric) / 30 (slides) |
 | Team Participation (peer form) | End of semester | 20 |
 
@@ -53,7 +53,7 @@ Mismatches between files: the rubric PDF says the proposal is due Oct 13 and Qua
 - Task 5 (10 pts): detailed write-up of the Task 2 topic: what we learned, the tie to class, and where it applies.
 - Task 6 (5 pts): what didn't go well, lessons learned, and the 2 biggest AI failures from AI_AUDIT.md and how the team caught them.
 
-## Project Code (due Nov 24)
+## Project Code (due Sun Nov 29, 11:59 PM)
 
 - 10 pts: clean, commented, formatted code.
 - 10 pts: the README explains how to clone, build and run, what works and what doesn't, and has the Archaeologist's 2 papers (older + newer).
