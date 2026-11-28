@@ -89,11 +89,27 @@ Notes from the authors' repo, for reproducing their setup:
 
 The rubric asks for two scholarly papers here: one older paper that the current paper builds on, and one newer paper that cites the current paper and builds on it. Each one must be checked by hand: the paper exists, and the citation link is real. Any fake or wrong reference an AI gave us goes in `AI_AUDIT.md`.
 
-**Prior work (older paper cited by Cheng et al. 2025):**
-*To be added.* Checked that it exists: ☐  Checked that Cheng et al. cite it: ☐
+### Prior work (older paper cited by Cheng et al. 2025)
 
-**Follow-up work (newer paper that cites Cheng et al. 2025):**
-*To be added.* Checked that it exists: ☐  Checked that it cites Cheng et al.: ☐
+**Extracting Training Data from Large Language Models**
+Nicholas Carlini, Florian Tramèr, Eric Wallace, Matthew Jagielski, Ariel Herbert-Voss, Katherine Lee, Adam Roberts, Tom Brown, Dawn Song, Úlfar Erlingsson, Alina Oprea, Colin Raffel. *30th USENIX Security Symposium*, pp. 2633–2650, 2021.
+
+- Links: [USENIX](https://www.usenix.org/conference/usenixsecurity21/presentation/carlini-extracting) · [arXiv 2012.07805](https://arxiv.org/abs/2012.07805)
+- **Why it matters:** Carlini et al. showed that a language model (GPT-2) can be made to repeat parts of its training data word for word, including people's names, phone numbers and email addresses. Half of Cheng et al.'s paper is this same kind of attack aimed at GitHub Copilot: they get it to leak real GitHub users' emails and locations.
+- **Where Cheng et al. cite it:** in the introduction, where they name training data extraction as one of their two attack types, and in Section 2.3 (Training Data Extraction Attacks on LLMs).
+
+Checked that it exists: ☑  Checked that Cheng et al. cite it: ☑
+
+### Follow-up work (newer paper that cites Cheng et al. 2025)
+
+**Protecting Private Code in IDE Autocomplete using Differential Privacy**
+Evgeny Grigorenko, David Stanojević, David Ilić, Egor Bogomolov, Kostadin Cvejoski (JetBrains Research). *3rd International Workshop on Integrated Development Environments (IDE '26)*, ACM, 2026.
+
+- Links: [arXiv 2601.22935](https://arxiv.org/abs/2601.22935) · [DOI 10.1145/3786151.3788603](https://doi.org/10.1145/3786151.3788603)
+- **Where it cites Cheng et al.:** reference [13], in the introduction, as evidence that AI code completion tools can leak private data.
+- **How it builds on it:** Cheng et al. showed the problem, and this paper tests a fix. It trains a Kotlin code completion model with differential privacy, which makes it much harder for an attacker to tell what code the model was trained on, while keeping the model about as useful as before. It does not rerun Cheng et al.'s attacks. Like our demo, it is about defending code completion tools, not attacking them.
+
+Checked that it exists: ☑  Checked that it cites Cheng et al.: ☑
 
 ## AI use
 

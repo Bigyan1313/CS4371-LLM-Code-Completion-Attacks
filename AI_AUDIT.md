@@ -34,8 +34,8 @@ One log per team, kept in the root of your GitHub repository and updated as you 
 | # | Date | Role | What the AI claimed or produced (short quote or summary) | Category | Verified? (yes / no / partially) | How you checked it (source, test, experiment) | Team member |
 |---|------|------|-----------------------------------------------------------|----------|----------------------------------|-----------------------------------------------|-------------|
 | 1 | 2026-10-05 | Archaeologist | Claude drafted the README: paper citation (authors, AAAI vol. 39 no. 22, pp. 23669–23677), summary, and setup notes from the authors' repo | OK | yes | Checked the citation against the AAAI page (doi.org/10.1609/aaai.v39i22.34537) and the setup notes against the authors' GitHub README | Bigyan Dhakal |
-| 2 | | | | | | | |
-| 3 | | | | | | | |
+| 2 | 2026-11-27 | Archaeologist | Prompt to Claude (with web search): find one older paper that Cheng et al. cite and that shaped their work, and one newer paper that cites them, and say where each citation appears. Claude's older pick: Carlini et al., "Extracting Training Data from Large Language Models" (USENIX Security 2021), cited in Cheng et al.'s introduction and Section 2.3 | OK | yes | Opened the Cheng et al. PDF (arXiv 2408.11006), searched for "Carlini", and found it in the introduction, Section 2.3 and the reference list | Bigyan Dhakal |
+| 3 | 2026-11-27 | Archaeologist | Same prompt. Claude's newer pick: Grigorenko et al., "Protecting Private Code in IDE Autocomplete using Differential Privacy" (IDE '26 workshop, ACM, 2026; arXiv 2601.22935), which cites Cheng et al. as reference [13] in its introduction | OK | yes | Opened the paper's PDF on arXiv, searched for "Cheng", and found Cheng et al. as reference [13], cited in the introduction | Bigyan Dhakal |
 | 4 | | | | | | | |
 | 5 | | | | | | | |
 | 6 | | | | | | | |
